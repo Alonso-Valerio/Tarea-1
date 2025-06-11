@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+float calcularPromedio(int cant_estudiantes) {
+    float suma_notas = 0, nota;
+    int i = 0;
+
+    while (i < cant_estudiantes) {
+        cout << "Ingrese la nota del estudiante " << i + 1 << ": ";
+        cin >> nota;
+        suma_notas += nota;
+        i++;
+    }
+
+    return suma_notas / cant_estudiantes;
+}
+#include <iostream>
+
+int contarNotasAltas(int cant_estudiantes, float promedio) {
+    int contNotasAltas = 0;
+    float nota;
+    int i = 0;
+
+    while (i < cant_estudiantes) {
+        cout << "Ingrese nuevamente la nota del estudiante " << i + 1 << ": ";
+        cin >> nota;
+
+        if (nota > promedio) {
+            contNotasAltas++;
+        }
+
+        i++;
+    }
+
+    return contNotasAltas;
+}
+
+int main() {
+    int cant_estudiantes;
+
+    cout << "Ingrese la cantidad de estudiantes: ";
+    cin >> cant_estudiantes;
+
+    float promedio = calcularPromedio(cant_estudiantes);
+    int contNotasAltas = contarNotasAltas(cant_estudiantes, promedio);
+
+    cout << "El promedio es: " << promedio << endl;
+    cout << "La cantidad de estudiantes con notas superiores al promedio es: " << contNotasAltas << endl;
+
+    return 0;
+}
+
